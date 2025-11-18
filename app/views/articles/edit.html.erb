@@ -1,0 +1,6 @@
+<div class="container my-5">
+  <h1>Edit Article</h1>
+  <%= render 'form', article: @article %>
+  <%= link_to 'Show Article', article_path(@article), class: 'btn btn-link mt-3 me-2' %>
+  <%= link_to 'Back to articles', articles_path, class: 'btn btn-link mt-3' %>
+</div>

@@ -1,0 +1,18 @@
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>All Articles</h1>
+    <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="list-group">
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article), class: "list-group-item list-group-item-action flex-column align-items-start" do %>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= article.title %></h5>
+          <small>Posted <%= time_ago_in_words(article.created_at) %> ago</small>
+        </div>
+        <p class="mb-1"><%= truncate(article.content, length: 150) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
